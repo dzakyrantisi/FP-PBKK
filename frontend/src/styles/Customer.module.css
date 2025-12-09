@@ -1,0 +1,161 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 320px;
+  border-radius: var(--tea-radius-large);
+  overflow: hidden;
+  box-shadow: var(--tea-shadow-strong);
+  isolation: isolate;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(16, 16, 15, 0.65), rgba(16, 16, 15, 0.15));
+  z-index: 1;
+}
+
+.heroImage {
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.05);
+  transform: scale(1.05);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3.5rem;
+  color: #fefefe;
+}
+
+.heroContent h1 {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section h2 {
+  font-size: 1.75rem;
+  margin: 0;
+  color: var(--tea-black);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.6rem;
+}
+
+.card {
+  background: var(--tea-surface);
+  border-radius: var(--tea-radius-medium);
+  box-shadow: var(--tea-shadow-soft);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.imageWrapper {
+  position: relative;
+  padding-top: 70%;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.4rem;
+}
+
+.cardBody h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--tea-text);
+}
+
+.price {
+  margin: 0;
+  font-weight: 600;
+  color: var(--tea-accent-dark);
+}
+
+.cartButton {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--tea-accent);
+  color: var(--tea-accent);
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.cartButton:hover {
+  background: var(--tea-accent);
+  color: #fefefe;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(13, 82, 55, 0.2);
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  background: var(--tea-surface);
+  border-radius: var(--tea-radius-medium);
+  box-shadow: var(--tea-shadow-soft);
+  font-weight: 600;
+  color: var(--tea-accent-dark);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 280px;
+  }
+
+  .heroContent {
+    padding: 2.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .cartButton {
+    width: 100%;
+    text-align: center;
+  }
+}

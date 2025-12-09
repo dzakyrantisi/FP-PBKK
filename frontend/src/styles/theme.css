@@ -1,0 +1,185 @@
+:root {
+  --tea-bg: #f5f1ea;
+  --tea-surface: #ffffff;
+  --tea-text: #20201f;
+  --tea-muted: #5e5c58;
+  --tea-border: #d9d2c4;
+  --tea-accent: #1d8f60;
+  --tea-accent-dark: #0b5d40;
+  --tea-black: #10100f;
+  --tea-shadow-soft: 0 14px 28px rgba(17, 17, 16, 0.08);
+  --tea-shadow-strong: 0 18px 32px rgba(17, 17, 16, 0.12);
+  --tea-radius-large: 24px;
+  --tea-radius-medium: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--tea-bg);
+  color: var(--tea-text);
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--tea-accent);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.btn,
+button {
+  cursor: pointer;
+}
+
+.btn-success,
+button.tea-button-primary {
+  background: var(--tea-accent);
+  border: none;
+  color: #fefefe;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-success:hover,
+button.tea-button-primary:hover {
+  background: var(--tea-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(13, 82, 55, 0.28);
+}
+
+.btn-success:disabled,
+button.tea-button-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline-success,
+button.tea-button-secondary,
+a.tea-button-secondary {
+  background: transparent;
+  border: 1px solid var(--tea-accent);
+  color: var(--tea-accent);
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.btn-outline-success:hover,
+button.tea-button-secondary:hover,
+a.tea-button-secondary:hover {
+  background: var(--tea-accent);
+  color: #fefefe;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(13, 82, 55, 0.18);
+}
+
+button.tea-button-secondary:disabled,
+a.tea-button-secondary[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+input.tea-input,
+textarea.tea-input,
+select.tea-input {
+  width: 100%;
+  background: var(--tea-surface);
+  border: 1px solid var(--tea-border);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input.tea-input:focus,
+textarea.tea-input:focus,
+select.tea-input:focus {
+  outline: none;
+  border-color: var(--tea-accent);
+  box-shadow: 0 0 0 4px rgba(29, 143, 96, 0.18);
+}
+
+.tea-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--tea-text);
+}
+
+.alert.tea-error,
+.tea-error {
+  background: rgba(217, 72, 89, 0.12);
+  color: #8c1c2c;
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(217, 72, 89, 0.2);
+}
+
+.badge.tea-badge,
+.tea-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(29, 143, 96, 0.12);
+  color: var(--tea-accent-dark);
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.shadow-tea-soft {
+  box-shadow: var(--tea-shadow-soft);
+}
+
+.shadow-tea-strong {
+  box-shadow: var(--tea-shadow-strong);
+}
+
+.card.tea-card,
+.tea-card {
+  background: var(--tea-surface);
+  border-radius: var(--tea-radius-large);
+  padding: 2rem;
+  box-shadow: var(--tea-shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+main.tea-main {
+  padding: 2.5rem 1.5rem 3.5rem;
+  min-height: calc(100vh - 140px);
+}
+
+@media (max-width: 768px) {
+  button.tea-button-primary,
+  .btn-success,
+  button.tea-button-secondary,
+  a.tea-button-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

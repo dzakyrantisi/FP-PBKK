@@ -1,0 +1,411 @@
+:root {
+  --landing-bg: #f5f1ea;
+  --landing-text: #1f1f1f;
+  --landing-muted: #5e5c58;
+  --landing-accent: #1d8f60;
+  --landing-accent-dark: #0b5d40;
+  --landing-surface: #ffffff;
+  --landing-border: #dad4c8;
+}
+
+.page {
+  min-height: 100vh;
+  background: var(--landing-bg);
+  color: var(--landing-text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 4.5rem 1.5rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.95rem;
+}
+
+.logoMark {
+  width: 1.75rem;
+  height: 1.75rem;
+  background: linear-gradient(135deg, var(--landing-accent), var(--landing-accent-dark));
+  border-radius: 0.55rem 1rem 0.55rem 1rem;
+  transform: rotate(-8deg);
+}
+
+.authActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.loginButton,
+.registerButton {
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loginButton {
+  background: #0f0f0f;
+  color: #fefefe;
+}
+
+.loginButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.registerButton {
+  background: var(--landing-accent);
+  color: #fefefe;
+}
+
+.registerButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(29, 143, 96, 0.4);
+}
+
+.main {
+  flex: 1;
+  padding: 0 4.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 3rem 0 2.5rem;
+}
+
+.heroDecorations {
+  display: none;
+}
+
+.heroContent h1 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 2.9rem;
+  font-weight: 600;
+  max-width: 28rem;
+  margin: 0 auto 1.25rem;
+}
+
+.heroContent p {
+  color: var(--landing-muted);
+  max-width: 28rem;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.heroActions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.explorePrimary,
+.exploreSecondary {
+  border-radius: 999px;
+  padding: 0.55rem 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.explorePrimary {
+  background: var(--landing-accent);
+  color: #fefefe;
+  box-shadow: 0 12px 28px rgba(29, 143, 96, 0.25);
+}
+
+.explorePrimary:hover {
+  transform: translateY(-2px);
+  background: var(--landing-accent-dark);
+}
+
+.exploreSecondary {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--landing-accent-dark);
+  border: 1px solid rgba(13, 93, 64, 0.2);
+}
+
+.exploreSecondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(15, 15, 15, 0.08);
+}
+
+.section {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--landing-text);
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sectionToggle {
+  font-size: 1.1rem;
+  color: var(--landing-muted);
+}
+
+.sectionDivider {
+  height: 1px;
+  background: var(--landing-border);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.stepCard {
+  background: var(--landing-surface);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 14px 24px rgba(18, 19, 16, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stepCard h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.stepCard p {
+  margin: 0;
+  color: var(--landing-muted);
+  line-height: 1.55;
+}
+
+.stepContent span {
+  color: var(--landing-accent-dark);
+  font-size: 0.85rem;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.stepIllustration {
+  width: 100%;
+  height: 120px;
+  border-radius: 1.25rem;
+}
+
+.joinSection {
+  gap: 2.5rem;
+}
+
+.joinGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.joinCard {
+  background: var(--landing-surface);
+  border-radius: 1.75rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 18px 32px rgba(19, 18, 16, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+.joinCard:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: -1.1rem;
+  height: 1px;
+  background: var(--landing-border);
+  opacity: 0.8;
+}
+
+.joinIllustrationWrapper {
+  max-width: 160px;
+}
+
+.joinContent h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.joinContent p {
+  margin: 0;
+  color: var(--landing-muted);
+  line-height: 1.6;
+}
+
+.joinCard h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.joinButton {
+  border-radius: 999px;
+  padding: 0.65rem 2.4rem;
+  background: #0f0f0f;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.joinButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.footer {
+  margin-top: auto;
+  padding: 2rem 4.5rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--landing-muted);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerLinks a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  color: var(--landing-text);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 2rem 2.5rem 1.5rem;
+  }
+
+  .main {
+    padding: 0 2.5rem 3rem;
+  }
+
+  .heroDecorations {
+    display: none;
+  }
+
+  .stepsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .joinGrid {
+    gap: 1.5rem;
+  }
+
+  .joinCard {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .joinButton {
+    grid-column: 1 / -1;
+    justify-self: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .main {
+    padding: 0 1.5rem 2.5rem;
+    gap: 2.5rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .explorePrimary,
+  .exploreSecondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .joinCard {
+    grid-template-columns: 1fr;
+  }
+
+  .joinIllustrationWrapper {
+    max-width: 100%;
+  }
+
+  .joinButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+}

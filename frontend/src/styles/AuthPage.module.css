@@ -1,0 +1,147 @@
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0 4rem;
+}
+
+.panel {
+  width: min(860px, 100%);
+  background: var(--tea-surface);
+  border-radius: var(--tea-radius-large);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  padding: 3rem;
+  box-shadow: var(--tea-shadow-strong);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.intro h1 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+.intro p {
+  margin: 0;
+  color: var(--tea-muted);
+  line-height: 1.65;
+}
+
+.introList {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--tea-muted);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.switchLink {
+  text-align: center;
+  color: var(--tea-muted);
+  font-size: 0.95rem;
+}
+
+.switchLink a {
+  color: var(--tea-accent);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.35rem;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-radius: var(--tea-radius-medium);
+  border: 1px solid var(--tea-border);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.radioActive {
+  border-color: var(--tea-accent);
+  background: rgba(29, 143, 96, 0.08);
+  box-shadow: 0 0 0 4px rgba(29, 143, 96, 0.15);
+}
+
+.radioOption strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.radioOption span {
+  color: var(--tea-muted);
+  font-size: 0.9rem;
+}
+
+.radioOption input {
+  width: 18px;
+  height: 18px;
+}
+
+.error {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .introList {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel {
+    padding: 2rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    gap: 1rem;
+  }
+}

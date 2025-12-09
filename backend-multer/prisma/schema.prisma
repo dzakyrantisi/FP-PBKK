@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  username     String  @id
+  password     String
+  refreshToken String? // Store the hashed refresh token
+  posts        Post[]
+
+  @@map("users")
+}
+
+model Post {
+  id        String   @id @default(uuid())
+  content   String
+  imagePath String? // Optional - S3 path to uploaded image
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [username], onDelete: Cascade)
+  replyToId String? // Optional - null if it's not a reply
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Reply relationships
+  replyTo Post?  @relation("PostReplies", fields: [replyToId], references: [id], onDelete: Cascade)
+  replies Post[] @relation("PostReplies")
+
+  @@map("posts")
+}
